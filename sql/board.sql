@@ -7,5 +7,5 @@ CREATE TABLE board
 
 ALTER TABLE board COMMENT '팀별 게시판';
 
-ALTER TABLE board
-    ADD CONSTRAINT UC_board_name UNIQUE (name);
+CREATE UNIQUE INDEX UQ_board_1
+    ON board(name);
