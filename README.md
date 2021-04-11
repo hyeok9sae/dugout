@@ -32,4 +32,4 @@
 
 - General
 
-​       ![GitHub](https://img.shields.io/badge/GitHub-777777?&logo=github&logoColor=white)
+  ![GitHub](https://img.shields.io/badge/GitHub-777777?&logo=github&logoColor=white) 
