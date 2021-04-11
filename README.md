@@ -26,7 +26,7 @@
 
 - Back-end
 
-​	   ![Intellij](https://img.shields.io/badge/Intellij_IDEA_2021.1-CD3F72?&logo=jetbrains&logoColor=white)
+  ![Intellij](https://img.shields.io/badge/Intellij_IDEA_2021.1-CD3F72?&logo=jetbrains&logoColor=white) 
 
 ##### 협업 Tool
 
