@@ -45,8 +45,8 @@ public class UserController {
     @ApiOperation(value = "유저 수정 API", notes = "유저 수정 후 해당 id값 반환")
     @PutMapping(value = "/{userId}", produces = { MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Long> update(@PathVariable("userId") Long userId, @RequestBody UserUpdateRequestDto userUpdateRequestDto){
-        Long updateduserId = userService.update(userId, userUpdateRequestDto);
-        return new ResponseEntity<Long>(updateduserId, HttpStatus.CREATED);
+        Long updatedUserId = userService.update(userId, userUpdateRequestDto);
+        return new ResponseEntity<Long>(updatedUserId, HttpStatus.CREATED);
     }
     // 유저 - 삭제
     @ApiOperation(value = "유저 삭제 API", notes = "유저 삭제 후 해당 id값 반환")
