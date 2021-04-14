@@ -1,10 +1,9 @@
-package com.jaehyeok.dugout.controller;
+package com.jaehyeok.dugout.controller.user;
 
-import com.jaehyeok.dugout.dto.UserResponseDto;
-import com.jaehyeok.dugout.dto.UserSaveRequestDto;
-import com.jaehyeok.dugout.dto.UserUpdateRequestDto;
-import com.jaehyeok.dugout.service.UserService;
-import io.swagger.annotations.Api;
+import com.jaehyeok.dugout.dto.user.UserResponseDto;
+import com.jaehyeok.dugout.dto.user.UserSaveRequestDto;
+import com.jaehyeok.dugout.dto.user.UserUpdateRequestDto;
+import com.jaehyeok.dugout.service.user.UserService;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

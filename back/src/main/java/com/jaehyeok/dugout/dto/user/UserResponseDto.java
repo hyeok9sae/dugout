@@ -1,6 +1,6 @@
-package com.jaehyeok.dugout.dto;
+package com.jaehyeok.dugout.dto.user;
 
-import com.jaehyeok.dugout.domain.User;
+import com.jaehyeok.dugout.domain.user.User;
 import lombok.Getter;
 
 @Getter

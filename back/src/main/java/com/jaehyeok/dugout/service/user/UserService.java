@@ -1,10 +1,10 @@
-package com.jaehyeok.dugout.service;
+package com.jaehyeok.dugout.service.user;
 
-import com.jaehyeok.dugout.domain.User;
-import com.jaehyeok.dugout.dto.UserResponseDto;
-import com.jaehyeok.dugout.dto.UserSaveRequestDto;
-import com.jaehyeok.dugout.dto.UserUpdateRequestDto;
-import com.jaehyeok.dugout.repository.UserRepository;
+import com.jaehyeok.dugout.domain.user.User;
+import com.jaehyeok.dugout.dto.user.UserResponseDto;
+import com.jaehyeok.dugout.dto.user.UserSaveRequestDto;
+import com.jaehyeok.dugout.dto.user.UserUpdateRequestDto;
+import com.jaehyeok.dugout.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,6 @@
-package com.jaehyeok.dugout.repository;
+package com.jaehyeok.dugout.repository.user;
 
-import com.jaehyeok.dugout.domain.User;
+import com.jaehyeok.dugout.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
