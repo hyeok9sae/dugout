@@ -1,4 +1,4 @@
-package com.jaehyeok.dugout.domain;
+package com.jaehyeok.dugout.domain.user;
 
 import lombok.*;
 

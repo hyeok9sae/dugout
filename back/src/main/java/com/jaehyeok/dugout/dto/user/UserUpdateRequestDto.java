@@ -1,4 +1,4 @@
-package com.jaehyeok.dugout.dto;
+package com.jaehyeok.dugout.dto.user;
 
 import lombok.Builder;
 import lombok.Getter;
