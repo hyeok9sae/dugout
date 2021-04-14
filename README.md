@@ -12,7 +12,7 @@
 
   ![Java](https://img.shields.io/badge/Java_11.0.1-ED8B00?logo=java&logoColor=white)  
 
-  ![Spring boot](https://img.shields.io/badge/Spring_boot_2.4.4-6DB33F?&logo=spring&logoColor=white) 
+  ![Spring Boot](https://img.shields.io/badge/Spring_Boot_2.4.4-6DB33F?&logo=spring&logoColor=white) 
 
   ![MySQL](https://img.shields.io/badge/MySQL_8.0.23-3A79A3?&logo=mysql&logoColor=white) 
   
