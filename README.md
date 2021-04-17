@@ -18,7 +18,7 @@
   
   ![AWS](https://img.shields.io/badge/AWS-EC690E?&logo=amazon-aws&logoColor=white) 
   
-  ![JPA](https://img.shields.io/badge/JPA-B4A981?&logo=hibernate&logoColor=white) 
+  ![JPA](https://img.shields.io/badge/JPA_2.1-B4A981?&logo=hibernate&logoColor=white) 
 
 ##### 개발 Tool
 
