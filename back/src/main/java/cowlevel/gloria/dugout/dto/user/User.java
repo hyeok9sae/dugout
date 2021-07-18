@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 @Setter
 @Component
 public class User {
-
     private Long id;
     private String email;
     private String password;
@@ -16,5 +15,4 @@ public class User {
     private String photo;
     private String stateComment;
     private int isAdmin;
-
 }

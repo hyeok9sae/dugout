@@ -35,22 +35,22 @@ public class UserController {
 
     @ApiOperation(value = "사용자 정보 등록")
     @PostMapping(value="", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<String> addUser(@RequestBody User user){
+    public ResponseEntity<Long> addUser(@RequestBody User user){
         userService.addUser(user);
-        return new ResponseEntity<String>("SUCCESS", HttpStatus.CREATED);
+        return new ResponseEntity<Long>(user.getId(), HttpStatus.CREATED);
     }
 
     @ApiOperation(value = "사용자 정보 수정")
     @PutMapping(value="{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<String> modifyUser(@RequestBody User user){
+    public ResponseEntity<Long> modifyUser(@RequestBody User user){
         userService.modifyUser(user);
-        return new ResponseEntity<String>("SUCCESS", HttpStatus.CREATED);
+        return new ResponseEntity<Long>(user.getId(), HttpStatus.CREATED);
     }
 
     @ApiOperation(value = "사용자 정보 삭제")
     @DeleteMapping(value="{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity<String> removeUserById(@PathVariable Long id){
+    public ResponseEntity<Long> removeUserById(@PathVariable Long id){
         userService.removeUserById(id);
-        return new ResponseEntity<String>("SUCCESS", HttpStatus.NO_CONTENT);
+        return new ResponseEntity<Long>(id, HttpStatus.NO_CONTENT);
     }
 }
