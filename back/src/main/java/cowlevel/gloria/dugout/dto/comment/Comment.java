@@ -1,26 +1,21 @@
-package cowlevel.gloria.dugout.dto.post;
+package cowlevel.gloria.dugout.dto.comment;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+@NoArgsConstructor
 @Getter
 @Setter
-//@Component
-@NoArgsConstructor
-public class Post {
+public class Comment {
     private Long id;
-    private String title;
     private String content;
     private Long userId;
     private Date createdAt;
     private Date updatedAt;
-    private int hits;
-    private int commentCount;
     private int goodCount;
-    private Long boardId;
-    private String thumbnail;
+    private Long postId;
+    private Long parent;
 }

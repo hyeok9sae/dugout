@@ -15,7 +15,7 @@
         WHERE id   = #{id}
     </select>
 
-    <insert id="insertPost" parameterType="Post">
+    <insert id="insertPost" parameterType="Post" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO post(
             title,
             content,
@@ -33,9 +33,9 @@
             #{userId},
             #{createdAt},
             #{updatedAt},
-            0
-            0
-            0
+            0,
+            0,
+            0,
             #{boardId},
             #{thumbnail}
                  )
@@ -46,7 +46,7 @@
         SET  title          = #{title},
              content        = #{content},
              updated_at     = #{updatedAt},
-             state_comment  = #{stateComment}
+             state_comment  = #{stateComment},
              thumbnail      = #{thumbnail}
         WHERE  id           = #{id}
     </update>

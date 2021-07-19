@@ -1,12 +1,13 @@
 package cowlevel.gloria.dugout.dto.user;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
 
+@NoArgsConstructor
+//@Component
 @Getter
 @Setter
-@Component
 public class User {
     private Long id;
     private String email;

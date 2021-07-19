@@ -2,16 +2,16 @@ package cowlevel.gloria.dugout.service.user;
 
 import cowlevel.gloria.dugout.dto.user.User;
 import cowlevel.gloria.dugout.mapper.user.UserMapper;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @Service
 public class UserServiceImpl implements UserService{
 
-    @Autowired
-    private UserMapper mapper;
+    private final UserMapper mapper;
 
     @Override
     public List<User> findAllUsers() {

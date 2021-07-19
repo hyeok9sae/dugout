@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cowlevel.gloria.dugout.mapper.comment.CommentMapper">
+    <select id="selectAllComments" resultType="Comment">
+        SELECT  *
+        FROM  comment
+        ORDER BY id
+    </select>
+
+    <select id="selectCommentById" resultType="Comment">
+        SELECT *
+        FROM comment
+        WHERE id   = #{id}
+    </select>
+
+    <insert id="insertComment" parameterType="Comment" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO comment(
+            content,
+            user_id,
+            created_at,
+            updated_at,
+            good_count,
+            post_id,
+            parent
+        ) VALUES (
+            #{content},
+            #{userId},
+            #{createdAt},
+            #{updatedAt},
+            0,
+            #{postId},
+            #{parent}
+        )
+    </insert>
+
+    <update id="updateComment" parameterType="Comment">
+        UPDATE  comment
+           SET  content         = #{content},
+                update_at       = #{updatedAt},
+
+         WHERE  id           = #{id}
+    </update>
+
+    <delete id="deleteContentById" parameterType="Long">
+        DELETE
+        FROM content
+        WHERE id = #{id}
+    </delete>
+</mapper>
