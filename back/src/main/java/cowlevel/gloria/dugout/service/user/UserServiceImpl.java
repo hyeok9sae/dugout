@@ -1,5 +1,6 @@
 package cowlevel.gloria.dugout.service.user;
 
+import cowlevel.gloria.dugout.config.security.JwtTokenProvider;
 import cowlevel.gloria.dugout.dto.user.User;
 import cowlevel.gloria.dugout.mapper.user.UserMapper;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +22,7 @@ public class UserServiceImpl implements UserService{
     private static final String returnPath = "src/main/webapp/";
     private final UserMapper mapper;
     private final PasswordEncoder passwordEncoder;
+    private final JwtTokenProvider jwtTokenProvider;
 
     @Override
     public List<User> findAllUsers() {
@@ -105,7 +107,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User login(User user) {
+    public String login(User user) {
         User u = mapper.selectUserByEmail(user.getEmail());
         if (user.getEmail() == null){
             return null;
@@ -113,7 +115,7 @@ public class UserServiceImpl implements UserService{
         // 입력되어 암호화된 패스워드와 기존에 저장된 암호화된 패스워드를 비교
         boolean check = passwordEncoder.matches(user.getPassword(), u.getPassword());
         if (check){
-            return mapper.selectUserById(u.getId());
+            return jwtTokenProvider.createToken(user.getEmail());
         }
         return null;
     }

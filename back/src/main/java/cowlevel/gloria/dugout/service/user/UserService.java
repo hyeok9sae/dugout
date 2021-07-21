@@ -12,5 +12,6 @@ public interface UserService {
     public boolean addUser(User user, MultipartFile file) throws IOException;
     public boolean modifyUser(User user, MultipartFile file) throws IOException;
     public boolean removeUserById(Long id);
-    public User login(User user);
+    public String login(User user);
+    public void encodingPassword(User user);
 }

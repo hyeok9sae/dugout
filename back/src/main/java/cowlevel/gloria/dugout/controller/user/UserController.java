@@ -62,11 +62,11 @@ public class UserController {
 
     @ApiOperation(value = "사용자 로그인")
     @PostMapping(value="/login")
-    public ResponseEntity<User> login(@RequestBody User user){
-        User userInfo = userService.login(user);
+    public ResponseEntity<String> login(@RequestBody User user){
+        String userInfo = userService.login(user);
         if (userInfo != null) {
-            return new ResponseEntity<User>(userInfo, HttpStatus.OK);
+            return new ResponseEntity<String>(userInfo, HttpStatus.OK);
         }
-        return new ResponseEntity<User>(new User(), HttpStatus.NO_CONTENT);
+        return new ResponseEntity<String>("FAIL", HttpStatus.NO_CONTENT);
     }
 }
