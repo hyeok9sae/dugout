@@ -15,7 +15,7 @@
          WHERE id   = #{id}
     </select>
 
-    <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insertUser" parameterType="User">
         INSERT INTO user(
             email,
             password,
@@ -47,4 +47,10 @@
           FROM user
          WHERE id = #{id}
     </delete>
+
+    <select id="selectUserByEmail" resultType="User">
+        SELECT *
+          FROM user
+         WHERE email = #{email}
+    </select>
 </mapper>

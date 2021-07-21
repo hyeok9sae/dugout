@@ -12,4 +12,5 @@ public interface UserMapper {
     public boolean insertUser(User user);
     public boolean updateUser(User user);
     public boolean deleteUserById(Long id);
+    public User selectUserByEmail(String email);
 }
