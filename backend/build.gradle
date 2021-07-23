@@ -1,0 +1,43 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'cowlevel.gloria'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Devtools
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Swagger
+    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+
+    // JPA
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.2'
+
+    // Lombok
+    implementation 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    // JDBC
+//    implementation 'org.springframework.boot:spring-boot-starter-jdbc:2.5.2'
+
+    // MySQL
+    implementation 'mysql:mysql-connector-java:8.0.23'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
