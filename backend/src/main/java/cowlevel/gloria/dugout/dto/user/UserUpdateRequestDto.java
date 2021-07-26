@@ -12,6 +12,5 @@ import lombok.NoArgsConstructor;
 @Builder
 public class UserUpdateRequestDto {
     private String nickname;
-    private String photo;
     private String stateComment;
 }
