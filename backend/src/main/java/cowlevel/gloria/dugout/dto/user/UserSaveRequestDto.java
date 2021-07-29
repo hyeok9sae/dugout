@@ -9,6 +9,7 @@ import lombok.*;
 public class UserSaveRequestDto {
 
     private String email;
+    @Setter
     private String password;
     private String nickname;
     @Setter
