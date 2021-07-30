@@ -29,7 +29,7 @@ public class JwtTokenProvider { // JWT 토큰을 생성 및 검증 모듈
 
     private final UserDetailsService userDetailsService;
 
-    @PostConstruct  // 객체 초기화, secretKey를 Base64로 인코딩
+    @PostConstruct  // 객체 초기화, secretKey 를 Base64로 인코딩
     protected void init(){
         secretKey = Base64.getEncoder().encodeToString(secretKey.getBytes());
     }
@@ -37,14 +37,14 @@ public class JwtTokenProvider { // JWT 토큰을 생성 및 검증 모듈
     // Jwt 토큰 생성
     public String createToken(String username) {
         System.out.println("로그인 ID : " + username);
-        Claims claims = Jwts.claims().setSubject(username); // JWT payload에 저장되는 정보 단위
+        Claims claims = Jwts.claims().setSubject(username); // JWT payload 에 저장되는 정보 단위
 //        claims.put("roles", roles);
         Date now = new Date();
         return Jwts.builder()
                 .setClaims(claims) // 정보 저장
                 .setIssuedAt(now) // 토큰 발행 시간 정보
                 .setExpiration(new Date(now.getTime() + tokenValidMilisecond)) // set Expire Time
-                .signWith(SignatureAlgorithm.HS256, secretKey) // 암호화 알고리즘, secret값 세팅
+                .signWith(SignatureAlgorithm.HS256, secretKey) // 암호화 알고리즘, secret 값 세팅
                 .compact();
     }
 

@@ -37,14 +37,14 @@ public class UserController {
     }
 
     @ApiOperation(value = "회원가입")
-    @PostMapping(value = "")
+    @PostMapping(value = "/sign-up")
     public ResponseEntity<Long> save(UserSaveRequestDto userSaveRequestDto, @RequestPart(value = "image", required = false) MultipartFile file) throws IOException {
         Long savedUserId = userService.save(userSaveRequestDto, file);
         return new ResponseEntity<Long>(savedUserId, HttpStatus.OK);
     }
 
     @ApiOperation(value = "로그인", notes = "로그인 성공시 JWT 토큰 발급")
-    @PostMapping(value = "/login")
+    @PostMapping(value = "/sing-in")
     public ResponseEntity<String> signIn(@RequestBody UserSignInRequestDto userSignInRequestDto){
         String jwtToken = userService.signIn(userSignInRequestDto);
         return new ResponseEntity<String>(jwtToken, HttpStatus.OK);
@@ -52,7 +52,7 @@ public class UserController {
 
     @ApiImplicitParam(name = "JWT token", required = true, dataType = "String", paramType = "header")
     @ApiOperation(value = "유저 정보 수정")
-    @PutMapping(value = "/{id}")
+    @PutMapping(value = "/general/{id}")
     public ResponseEntity<Long> update(@PathVariable Long id, @RequestBody UserUpdateRequestDto userUpdateRequestDto) throws IOException{
         Long updatedUserId = userService.update(id, userUpdateRequestDto);
         return new ResponseEntity<Long>(updatedUserId, HttpStatus.OK);
@@ -68,7 +68,7 @@ public class UserController {
 
     @ApiImplicitParam(name = "JWT token", required = true, dataType = "String", paramType = "header")
     @ApiOperation(value = "유저 프로필 이미지 수정")
-    @PutMapping(value = "/profile/{id}")
+    @PutMapping(value = "/profile-image/{id}")
     public ResponseEntity<Long> updateProfileImage(@PathVariable Long id, @RequestPart(value = "image", required = false) MultipartFile file) throws IOException {
         Long updatedUserId = userService.updateProfileImage(id, file);
         return new ResponseEntity<Long>(updatedUserId, HttpStatus.OK);

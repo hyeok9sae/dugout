@@ -46,11 +46,6 @@ public class User implements UserDetails {
     @Column(name = "is_admin")
     private int isAdmin;
 
-    // 회원 권한
-//    @ElementCollection(fetch = FetchType.EAGER)
-//    @Builder.Default
-//    private List<String> roles = new ArrayList<>();
-
     @Builder
     public User(String email, String password, String nickname, String photo, String stateComment, int isAdmin) {
         this.email = email;
@@ -78,7 +73,6 @@ public class User implements UserDetails {
     // UserDetails Override
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-//        return this.roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
         return null;
     }
 
