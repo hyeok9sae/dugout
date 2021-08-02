@@ -36,7 +36,7 @@ public class UserController {
         return new ResponseEntity<UserResponseDto>(userResponseDto, HttpStatus.OK);
     }
 
-    @ApiOperation(value = "회원가입")
+    @ApiOperation(value = "유저 정보 등록 - 회원가입")
     @PostMapping(value = "/sign-up")
     public ResponseEntity<Long> save(UserSaveRequestDto userSaveRequestDto, @RequestPart(value = "image", required = false) MultipartFile file) throws IOException {
         Long savedUserId = userService.save(userSaveRequestDto, file);
@@ -75,7 +75,7 @@ public class UserController {
     }
 
     @ApiImplicitParam(name = "JWT token", required = true, dataType = "String", paramType = "header")
-    @ApiOperation(value = "유저 정보 삭제")
+    @ApiOperation(value = "유저 정보 삭제 - 회원탈퇴")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Long> delete(@PathVariable Long id){
         userService.delete(id);
