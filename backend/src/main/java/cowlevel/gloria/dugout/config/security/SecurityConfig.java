@@ -42,11 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests() // 다음 요청에 대한 사용권한 체크
                 .anyRequest().permitAll()
                 .and()
-//                .exceptionHandling().accessDeniedHandler(new CustomAccessDeniedHandler())
-//                .and()
-//                .exceptionHandling().authenticationEntryPoint(new CustomAuthenticationEntryPoint())
-//                .and()
                 .addFilterBefore(new JwtAuthenticationFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class); // jwt token 필터를 id/password 인증 필터 전에 넣어라.
+
     }
 
     @Override
