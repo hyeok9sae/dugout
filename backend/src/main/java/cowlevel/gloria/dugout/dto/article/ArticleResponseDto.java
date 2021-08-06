@@ -3,6 +3,7 @@ package cowlevel.gloria.dugout.dto.article;
 import cowlevel.gloria.dugout.entity.article.Article;
 import lombok.Getter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -11,8 +12,8 @@ public class ArticleResponseDto {
     private String title;
     private String content;
     private Long userId;
-    private Date createdAt;
-    private Date updatedAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
     private int hits;
     private int commentCount;
     private int goodCount;

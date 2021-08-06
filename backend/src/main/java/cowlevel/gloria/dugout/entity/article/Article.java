@@ -10,6 +10,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -35,12 +37,10 @@ public class Article {
 
     @NotNull
     @Column(name = "created_at")
-    @CreatedDate
-    private Date createdAt;
+    private LocalDateTime createdAt;
 
     @Column(name = "updated_at")
-    @LastModifiedDate
-    private Date updatedAt;
+    private LocalDateTime updatedAt;
 
     @NotNull
     private int hits;
@@ -57,8 +57,18 @@ public class Article {
     @Column(name = "board_id")
     private Long boardId;
 
+    @PrePersist
+    public void setPrePersist(){
+        this.hits = 0;
+        this.commentCount = 0;
+        this.goodCount = 0;
+        this.userId = 0L;
+        this.boardId = 0L;
+        this.createdAt = LocalDateTime.now();
+    }
+
     @Builder
-    public Article(String title, String content, Long userId, Date createdAt, Date updatedAt, int hits, int commentCount, int goodCount, Long boardId) {
+    public Article(String title, String content, Long userId, LocalDateTime createdAt, LocalDateTime updatedAt, int hits, int commentCount, int goodCount, Long boardId) {
         this.title = title;
         this.content = content;
         this.userId = userId;
@@ -68,5 +78,18 @@ public class Article {
         this.commentCount = commentCount;
         this.goodCount = goodCount;
         this.boardId = boardId;
+    }
+
+    public void update(String title, String content){
+        this.title = title;
+        this.content = content;
+    }
+
+    public void updateHits(int hits){
+        this.hits = hits+1;
+    }
+
+    public void updateUpdatedAt(){
+        this.updatedAt = LocalDateTime.now();
     }
 }

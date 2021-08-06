@@ -1,6 +1,7 @@
 package cowlevel.gloria.dugout.dto.user;
 
 import cowlevel.gloria.dugout.entity.user.User;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
 
 @Getter
@@ -13,9 +14,9 @@ public class UserSaveRequestDto {
     private String password;
     private String nickname;
     @Setter
+    @ApiModelProperty(hidden = true)
     private String photo;
     private String stateComment;
-    private int isAdmin;
 
     public User toEntity(){
         return User.builder()
@@ -24,7 +25,6 @@ public class UserSaveRequestDto {
                 .nickname(nickname)
                 .photo(photo)
                 .stateComment(stateComment)
-                .isAdmin(0)
                 .build();
     }
 }

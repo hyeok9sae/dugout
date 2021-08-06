@@ -1,4 +1,7 @@
 package cowlevel.gloria.dugout.repository.article;
 
-public interface ArticleRepository {
+import cowlevel.gloria.dugout.entity.article.Article;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ArticleRepository extends JpaRepository<Article, Long> {
 }
