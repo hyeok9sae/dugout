@@ -46,6 +46,11 @@ public class User implements UserDetails {
     @Column(name = "is_admin")
     private int isAdmin;
 
+    @PrePersist
+    public void setIsAdmin() {
+        this.isAdmin = 0;
+    }
+
     @Builder
     public User(String email, String password, String nickname, String photo, String stateComment, int isAdmin) {
         this.email = email;

@@ -28,7 +28,7 @@ public class UserController {
         return new ResponseEntity<List<UserResponseDto>>(userResponseDtoList, HttpStatus.OK);
     }
 
-    @ApiImplicitParam(name = "JWT token", required = true, dataType = "String", paramType = "header")
+    @ApiImplicitParam(name = "X-AUTH-TOKEN", required = true, dataType = "String", paramType = "header")
     @ApiOperation(value = "유저 상세 조회")
     @GetMapping(value = "/{id}")
     public ResponseEntity<UserResponseDto> findById(@PathVariable Long id){
@@ -50,7 +50,7 @@ public class UserController {
         return new ResponseEntity<String>(jwtToken, HttpStatus.OK);
     }
 
-    @ApiImplicitParam(name = "JWT token", required = true, dataType = "String", paramType = "header")
+    @ApiImplicitParam(name = "X-AUTH-TOKEN", required = true, dataType = "String", paramType = "header")
     @ApiOperation(value = "유저 정보 수정")
     @PutMapping(value = "/general/{id}")
     public ResponseEntity<Long> update(@PathVariable Long id, @RequestBody UserUpdateRequestDto userUpdateRequestDto) throws IOException{
@@ -58,7 +58,7 @@ public class UserController {
         return new ResponseEntity<Long>(updatedUserId, HttpStatus.OK);
     }
 
-    @ApiImplicitParam(name = "JWT token", required = true, dataType = "String", paramType = "header")
+    @ApiImplicitParam(name = "X-AUTH-TOKEN", required = true, dataType = "String", paramType = "header")
     @ApiOperation(value = "유저 패스워드 수정")
     @PutMapping(value = "/password/{id}")
     public ResponseEntity<Long> updatePassword(@PathVariable Long id, @RequestBody UserUpdatePasswordRequestDto userUpdatePasswordRequestDto){
@@ -66,7 +66,7 @@ public class UserController {
         return new ResponseEntity<Long>(updatedUserId, HttpStatus.OK);
     }
 
-    @ApiImplicitParam(name = "JWT token", required = true, dataType = "String", paramType = "header")
+    @ApiImplicitParam(name = "X-AUTH-TOKEN", required = true, dataType = "String", paramType = "header")
     @ApiOperation(value = "유저 프로필 이미지 수정")
     @PutMapping(value = "/profile-image/{id}")
     public ResponseEntity<Long> updateProfileImage(@PathVariable Long id, @RequestPart(value = "image", required = false) MultipartFile file) throws IOException {
@@ -74,7 +74,7 @@ public class UserController {
         return new ResponseEntity<Long>(updatedUserId, HttpStatus.OK);
     }
 
-    @ApiImplicitParam(name = "JWT token", required = true, dataType = "String", paramType = "header")
+    @ApiImplicitParam(name = "X-AUTH-TOKEN", required = true, dataType = "String", paramType = "header")
     @ApiOperation(value = "유저 정보 삭제 - 회원탈퇴")
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Long> delete(@PathVariable Long id){
